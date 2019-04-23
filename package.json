@@ -1,0 +1,22 @@
+{
+  "name": "cs546_final",
+  "version": "1.0.0",
+  "description": "Final Project for CS 546",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexsaltstein/CS546_Final.git"
+  },
+  "author": "Alex Saltstein, Divya Unnam, Guangqi, Vyshali Prabananth Lal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexsaltstein/CS546_Final/issues"
+  },
+  "homepage": "https://github.com/alexsaltstein/CS546_Final#readme",
+  "dependencies": {
+    "mongodb": "^3.2.3"
+  }
+}
