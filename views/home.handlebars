@@ -1,0 +1,52 @@
+<div class="card-main-div" style="background:url('/public/images/46468770.jpg') no-repeat;">
+  <div class="card-text-wrapper">
+    <div class="content-div content-1-div">
+      <span style="border: 1px dashed;" class="edit-custom-text">Happy Eve</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Color
+          </button>
+          {{!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" class = "Blue" href="#">Blue</a>
+            <a class="dropdown-item" class = "Green" href="#">Green</a>
+            <a class="dropdown-item" class = "Orange" href="#">Orange</a>
+          </div> --}}
+          <select class="selectpicker">
+            <option>Mustard</option>
+            <option>Ketchup</option>
+            <option>Relish</option>
+          </select>
+
+        </div>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <textarea class="text-tobe-saved"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn save-flyer-action btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- dropdown for colour -->
