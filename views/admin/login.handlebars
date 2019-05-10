@@ -1,14 +1,24 @@
+<h1 class="welcome"> Welcome to Flyer Creater </h1>
+<br>
+<h3> Login </h2>
+<br>
+<table>
 <form action="/login" method="POST" id="login-form">
-  <label for="username">Email</label>
-  <input type="text" id="username" name="username">
-  <label for="password">Password</label>
-  <input type="password" id="password" name="password">
-  <button type="submit">login</button>
+  <tr><td><label for="username">Email</label></td>
+  <td><input type="text" id="username" name="username"></td>
+  </tr>
+   <tr><td><label for="password">Password</label></td>
+  <td><input type="password" id="password" name="password"></td></tr>
+</table>
+<br>
+  <button type="submit">Login</button>
 </form>
 {{#if hasErrors}}
     <p>You did not enter a valid username and/or password</p>
 {{/if}}
-<a href="/register">
+<br>
+<br>
+<p>Don't have an account? <a href="/register">
   <button>Register</button>
-</a>
+</a> </p>
 
