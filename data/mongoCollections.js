@@ -17,5 +17,7 @@ const getCollectionFn = collection => {
 
 /* Now, you can list your collections here: */
 module.exports = {
-  flyers: getCollectionFn("flyers")
+  users: getCollectionFn("users"),
+  userFlyers: getCollectionFn("userFlyers"),
+  templateFlyers: getCollectionFn("templateFlyers")
 };

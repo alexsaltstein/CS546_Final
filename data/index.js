@@ -1,5 +1,10 @@
-const flyers = require("./flyers");
+
+const usersData = require("./users");
+const userFlyersData = require("./userFlyersData");
+const templateFlyersData = require("./templateFlyersData");
 
 module.exports = {
-  flyers: flyers
+  users: usersData,
+  userFlyers: userFlyersData,
+  templateFlyers: templateFlyersData
 };

@@ -1,31 +1,14 @@
-const dbConnection = require("./data/mongoConnection");
-const data = require("./data");
-const flyers = data.flyers;
+const templates = require("./data/templateFlyers");
+const connection = require("./data/mongoConnection");
 
-async function main() {
-  const db = await dbConnection();
-  await db.dropDatabase();
-  console.log("11111");
-  try {
-    const x = await flyers.create();
-    console.log(x);
-  }catch(e){
-    console.log(e);
-  }
-  try {
-    const x = await flyers.create();
-    console.log(x);
-  }catch(e){
-    console.log(e);
-  }
-  try {
-    const x = await flyers.create();
-    console.log(x);
-  }catch(e){
-    console.log(e);
-  }
-  console.log("Done seeding database");
-  await db.serverConfig.close();
-}
-
-main();
+const main = async () => {
+    const getTemplates = await templates.getAll();
+    if (getTemplates.size != 0) throw "templates is already seeded";
+    
+    const db = await connection();
+    db.serverConfig.close();
+ };
+ 
+ main().catch(error => {
+     console.log(error);
+ });
