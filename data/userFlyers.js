@@ -1,5 +1,6 @@
 const mongoCollections = require("./mongoCollections");
 const flyers = mongoCollections.userFlyers;
+const uuid = require("node-uuid");
 
 //checks to see if string is a valid string
 function isValidString(string){
@@ -65,23 +66,22 @@ let updateElement = async function updateElement(id, elementid, text, size, colo
 
 }
 
-let create = async function create(background, content){
+let create = async function create(background, elements){
     isValidString(background);
-    isValidString(content);
     const flyersCollection = await flyers();
 
-    let elements = [];
-    for (i = 1; i <=4; i++){
-        elements.push({
-            text: "template text",
-            size: 10,
-            color: "#000000"
-        });
-    }
+    // let elements = [];
+    // for (i = 1; i <=4; i++){
+    //     elements.push({
+    //         text: "template text",
+    //         size: 10,
+    //         color: "#000000"
+    //     });
+    // }
 
     let newFlyer = {
+        _id: uuid.v4(),
         background: background,
-        content: content,
         elements: elements
     };
 

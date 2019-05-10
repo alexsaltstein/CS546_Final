@@ -73,6 +73,10 @@ const constructMethod = app=>{
             }
         }catch(e){
             console.log(e);
+            res.render("admin/login", {
+                hasErrors: true
+            });
+            res.status(401);
             return;
         }
         

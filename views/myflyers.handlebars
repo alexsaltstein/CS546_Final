@@ -15,7 +15,7 @@
         {{!-- change this based on what the pages are called --}}
         <ul class = navbar>  
             <li class=nav><a href = "/">Home</a></li>
-            <li class=nav><a href="/profile">My Profile</a></li>
+            <li class=nav><a href="/private">My Profile</a></li>
             <li class=nav><a href = "/logout">Logout</a></li>
         </ul>
 
@@ -44,8 +44,8 @@
 
 </div>
 
-<div>
-    <table class = "user-flyers">
+
+    {{!-- <table class = "user-flyers">
         {{#if flyers.length}}
             {{#each flyers}}
             <tr>
@@ -58,7 +58,29 @@
             </tr>
             {{/each}}
         {{/if}}
-    </table>
+    </table> --}}
+    {{#if hasFlyers}}
+    {{#each flyers}}
+    <a href="/private/{{id}}">
+    <div class="card-main-div" style="background:url('/public/images/{{background}}') no-repeat;">
+    <div class="card-text-wrapper">
+        <div class="content-div content-1-div">
+            <span style="border: 1px dashed;" class="">{{element1}}</span>
+        </div>
+        <div class="content-div content-1-div">
+            <span style="border: 1px dashed;" class="">{{element2}}</span>
+        </div>
+        <div class="content-div content-1-div">
+            <span style="border: 1px dashed;" class="">{{element3}}</span>
+        </div>
+        <div class="content-div content-1-div">
+            <span style="border: 1px dashed;" class="">{{element4}}</span>
+        </div>
+    </div>
+    </div>
+    </a>
+{{/each}}
+{{/if}}
 
 </div>
 
