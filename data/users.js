@@ -29,12 +29,79 @@ let get = async function get(id){
     return user;
 }
 
+let getByEmailAndPass = async function getByEmailAndPass(email, hashedPassword){
+    isValidString(email);
+    isValidString(hashedPassword);
+    const usersCollection = await users();
+
+    const user = await usersCollection.findOne({
+        $and: [
+          { email: email },
+          { hashedPassword: hashedPassword }
+        ]
+    });
+    if (user === null) throw "No user exists with that email and hashedPassword";
+
+    return user;
+}
+
+let getByEmail = async function getByEmail(email){
+    isValidString(email);
+    const usersCollection = await users();
+
+    const user = await usersCollection.findOne({email: email});
+    if (user === null) throw "No user exists with that email";
+
+    return user;
+}
+
+let remove = async function remove(id){
+    if (!id) throw "You must provide an id to search for";
+    const usersCollection = await users();
+
+    const user = await get(id);
+    const deletionInfo = await usersCollection.removeOne({_id: id});
+
+    if (deletionInfo.deletedCount === 0) throw `Could not delete user with id of ${id}`;
+
+    return user;
+}
+
+let addFlyer = async function addFlyer(id, flyer){
+    if (!id) throw "You must provide an id to add a flyer to";
+    isValidString(flyer);
+    const usersCollection = await users();
+
+    return usersCollection
+      .updateOne({ _id: id }, { $addToSet: { flyers: flyer } })
+      .then(function() {
+        return get(id);
+      });
+}
+
+let removeFlyer = async function removeFlyer(id, flyer){
+    if (!id) throw "You must provide an id to add a flyer to";
+    isValidString(flyer);
+    const usersCollection = await users();
+
+    return usersCollection
+      .updateOne({ _id: id }, { $pull: { flyers: flyer } })
+      .then(function() {
+        return get(id);
+      });
+}
+
 let create = async function create(firstName, lastName, email, hashedPassword){
     isValidString(firstName);
     isValidString(lastName);
     isValidString(email);
     isValidString(hashedPassword);
     const usersCollection = await users();
+
+    let existingUser = await usersCollection.findOne({email: email});
+    if(existingUser !== null) throw "User already exists with that email"
+
+    
 
     let newUser = {
         firstName: firstName,
@@ -57,5 +124,10 @@ let create = async function create(firstName, lastName, email, hashedPassword){
 module.exports = {
     getAll,
     get,
+    getByEmailAndPass,
+    getByEmail,
+    remove,
+    addFlyer,
+    removeFlyer,
     create
 };

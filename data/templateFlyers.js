@@ -1,5 +1,5 @@
 const mongoCollections = require("./mongoCollections");
-const flyers = mongoCollections.flyers;
+const flyers = mongoCollections.templateFlyers;
 
 let getAll = async function getAll(){
     const flyersCollection = await flyers();

@@ -1,12 +1,20 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const app = express();
-const configRoutes = require("./routes");
+//I pledge my honor that I have abided by the Stevens honor system.
+//Alex Saltstein
+const users = require("./data/users");
+const connection = require("./data/mongoConnection");
 
-app.use(bodyParser.json());
-configRoutes(app);
+const main = async () => {
+    
+   // const sasha = await users.create("head", "poop", "alex@gmail.com", "fdsajfkdajsflasdj");
+    const sasha = await users.getByEmail("alex@gmail.com");
+    console.log(sasha);
+    const shit = await users.addFlyer(sasha._id, "hfidsajf");
+    const fdhas = await users.addFlyer(sasha._id, "hfidsajf");
+    console.log(await users.getByEmailAndPass("alex@gmail.com","fdsajfkdajsflasdj"));
+    const db = await connection();
+    db.serverConfig.close();
+};
 
-app.listen(3000, () => {
-  console.log("We've now got a server!");
-  console.log("Your routes will be running on http://localhost:3000");
+main().catch(error => {
+    console.log(error);
 });
