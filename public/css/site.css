@@ -28,3 +28,14 @@
 .card-text-wrapper{
     top: 16%;
 }
+.template-image-wrapper img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+.card-outer-wrapper {
+    max-width: 900px;
+    margin: 0px auto !important;
+    padding: 10px;
+}
