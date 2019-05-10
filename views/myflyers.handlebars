@@ -1,0 +1,64 @@
+{{!-- 
+.nav{
+    display: inline;
+    text-align: center;
+
+}
+
+.navbar{
+    border: 1px solid;
+} --}}
+
+
+
+<div>
+        {{!-- change this based on what the pages are called --}}
+        <ul class = navbar>  
+            <li class=nav><a href = "/">Home</a></li>
+            <li class=nav><a href="/profile">My Profile</a></li>
+            <li class=nav><a href = "/logout">Logout</a></li>
+        </ul>
+
+</div>
+
+
+<h1> My Profile </h1>   
+
+
+<div>
+
+    <br>
+
+    <h1> {{firstName}}{{lastName}} </h1>
+
+    <h3> {{email}} </h3>
+
+
+</div>
+
+
+<div>
+
+    <h1>Flyers</h1>
+
+
+</div>
+
+<div>
+    <table class = "user-flyers">
+        {{#if flyers.length}}
+            {{#each flyers}}
+            <tr>
+                <td>
+                    <a href = "/editFlyer/{{id}}">  <img src = "flyer from database"></a>
+
+                    <a href="path to the flyer image" download="myflyer.pdf"> Download Flyer </a>
+
+                </td>
+            </tr>
+            {{/each}}
+        {{/if}}
+    </table>
+
+</div>
+
