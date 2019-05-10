@@ -1,5 +1,6 @@
 const mongoCollections = require("./mongoCollections");
 const flyers = mongoCollections.templateFlyers;
+const uuid = require("node-uuid");
 
 //checks to see if string is a valid string
 function isValidString(string){
@@ -28,13 +29,16 @@ let get = async function get(id){
     return flyer;
 }
 
-let create = async function create(background, elements){
+let create = async function create(background, content, elements){
     isValidString(background);
-    if (!elements || elements.size != 4) throw "You must provide an elements array and it must be of size 4";
+    isValidString(content);
+    if (elements.length != 4) throw "You must provide an elements array and it must be of size 4";
     const flyersCollection = await flyers();
 
     let newFlyer = {
+        _id: uuid.v4(),
         background: background,
+        content: content,
         elements: elements
     };
 

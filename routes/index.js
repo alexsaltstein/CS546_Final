@@ -1,5 +1,5 @@
 const path = require("path");
-const flyers = require("../data/flyers");
+const flyers = require("../data/templateFlyers");
 // const users = require("./users");
 
 const constructorMethod = app => {
