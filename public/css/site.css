@@ -39,3 +39,21 @@
     margin: 0px auto !important;
     padding: 10px;
 }
+
+.nav{
+    display: inline;
+    text-align: center;
+    padding: 5px;
+
+}
+.logo{
+    display: inline;
+    font-family: Arial;
+    font-size: 30px;
+    
+
+}
+    
+.navbar{
+    border: 2px solid;
+}
