@@ -105,8 +105,8 @@ let create = async function create(firstName, lastName, email, hashedPassword){
     
 
     let newUser = {
-        firstName: xxs(firstName),
-        lastName: xxs(lastName),
+        firstName: xss(firstName),
+        lastName: xss(lastName),
         email: email,
         hashedPassword: hashedPassword,
         flyers: []

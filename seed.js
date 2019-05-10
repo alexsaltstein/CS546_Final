@@ -1,6 +1,8 @@
 const templates = require("./data/templateFlyers");
 const users = require("./data/users");
 const connection = require("./data/mongoConnection");
+const bcrypt = require("bcryptjs");
+const saltRounds =  3;
 
 const main = async () => {
     const db = await connection();
@@ -33,7 +35,8 @@ const main = async () => {
     await templates.create('yellow.jpg', elements);
     await templates.create('yellowbluecircle.jpg', elements);
 
-    await 
+    const hash = await bcrypt.hash("1234", saltRounds);
+    await users.create("hi", "dsa", "t@gmail.com", hash);
     
     db.serverConfig.close();
  };
