@@ -35,7 +35,6 @@ let create = async function create(background, elements){
 
     let newFlyer = {
         background: background,
-        content: content,
         elements: elements
     };
 
