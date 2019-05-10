@@ -1,4 +1,5 @@
 const templates = require("./data/templateFlyers");
+const users = require("./data/users");
 const connection = require("./data/mongoConnection");
 
 const main = async () => {
@@ -31,6 +32,8 @@ const main = async () => {
     await templates.create('purplelines.jpg', elements);
     await templates.create('yellow.jpg', elements);
     await templates.create('yellowbluecircle.jpg', elements);
+
+    await 
     
     db.serverConfig.close();
  };

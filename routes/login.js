@@ -11,7 +11,7 @@ router.post("/",async (req,res) =>{
     }else{
         let user;
         try {
-            user = await data.userData.findUser(userInfo.username);
+            user = await data.users.getByEmail(userInfo.email);
         } catch (err) {
             res.render("admin/error",{error:error});
             return;

@@ -1,4 +1,3 @@
-
 const loginRoutes = require("./login");
 const registerRoutes = require("./register");
 const flyerRoutes = require("./flyers");
@@ -27,7 +26,7 @@ const constructMethod = app=>{
     });
     app.use("/login", loginRoutes);
     app.use("/register", registerRoutes);
-    app.use("/flyer",flyerRoutes);
+    app.use("/flyers",flyerRoutes);
 };
 
 module.exports = constructMethod;
