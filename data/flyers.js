@@ -10,7 +10,7 @@ module.exports = {
         const flyerCollection = await flyers();
         let newflyer = {
             _id: uuid.v4(),
-            content: '<div class="card-main-div" style="background:url("/public/images/46468770.jpg") no-repeat;"><div class="card-text-wrapper"><div class="content-div content-1-div"><span style="border: 1px dashed;" class="edit-custom-text">Happy Eve</span></div></div></div>',
+            content: '<div class="card-main-div" style="background:url(/public/images/1.png) no-repeat;"><div class="card-text-wrapper"><div class="content-div content-1-div"><span style="border: 1px dashed;" class="edit-custom-text">Happy Eve</span></div></div></div>',
             image:"1.png"
         };
         const insertInfo = await flyerCollection.insertOne(newflyer);
@@ -24,6 +24,13 @@ module.exports = {
     async getAll() {
         const flyerCollection = await flyers();
         return flyerCollection.find({}).toArray();
+    },
+
+    async get(id) {
+        const flyerCollection = await flyers();
+        const flyerr = await flyerCollection.findOne({ _id: id });
+        if (flyerr === null) throw "No flyer with that id";
+        return flyerr;
     }
 
     // async get(id) {

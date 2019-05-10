@@ -61,6 +61,4 @@ $(document).ready(function () {
     //         //$(".text-tobe-saved").css('color', 'red').val();
     //     })
     // })
-
-    $(".image1").click
 });
