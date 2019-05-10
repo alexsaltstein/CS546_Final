@@ -54,3 +54,5 @@ module.exports={
     addUser:create,
     findUser:get
 };
+
+// create("hello","password","Guangqi","Qing","gqing@stevens.edu");

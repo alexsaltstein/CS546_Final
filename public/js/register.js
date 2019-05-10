@@ -1,8 +1,15 @@
 $(function(){
     $("#username").blur(function(){
+        let username = this.value;
+        alert("alert");
         $.ajax({
-            type: "post",
-            url: 
+            url: "/register/"+username,
+            type: 'GET',
+            dataType: 'json', // added data type
+            success: function(res) {
+                console.log("abc");
+                alert(res);
+            }
         });
     });
 });
