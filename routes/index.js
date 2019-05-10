@@ -80,11 +80,10 @@ const constructMethod = app=>{
         if (user){
           req.session.auth = true;
           req.session.userid = user._id;
-          req.session.username = user.username;
+          req.session.email = user.email;
           req.session.firstName = user.firstName;
           req.session.lastName = user.lastName;
-          req.session.profession = user.profession;
-          req.session.bio = user.bio;
+          req.session.flyers = user.flyers;
           res.redirect('/flyers');
         }else{
           res.render("admin/login", {
@@ -96,8 +95,12 @@ const constructMethod = app=>{
       });
 
     app.get("/logout", (req,res) =>{
-        req.session.destroy();
-        res.render("templates/logout");
+        if (req.session.auth){
+            req.session.destroy();
+            res.render("logout");
+        }else{
+            res.redirect("/");
+        }
     });
     app.use("/register", registerRoutes);
     app.use("/flyers",flyerRoutes);
