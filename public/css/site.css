@@ -1,0 +1,41 @@
+.content-div span {
+    cursor: pointer;
+    display: inline-block;
+    white-space: initial;
+}
+
+.card-text-wrapper {
+    margin: 0px auto !important;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 17%;
+    width: 80%;
+}
+
+.content-div {
+    line-height: 1.4;
+}
+
+.card-main-div{
+    background-size: 100% auto !important; 
+}
+.card-main-div {
+    width: 420px;
+    height: 595px !important;
+    background-size: 100% auto !important;
+}
+.card-text-wrapper{
+    top: 16%;
+}
+.template-image-wrapper img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+.card-outer-wrapper {
+    max-width: 900px;
+    margin: 0px auto !important;
+    padding: 10px;
+}
