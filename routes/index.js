@@ -40,6 +40,11 @@ const constructorMethod = app => {
         //     console.log(flyerCollectionId);
         // });
 
+         app.get("/logout", async (req, res) => {
+            res.status(200).render("logout");
+           
+        });
+        
         app.use("*", (req, res) => {
             res.status(404).render("EditFlyer/editFlyer");
         });
