@@ -65,8 +65,9 @@ let updateElement = async function updateElement(id, elementid, text, size, colo
 
 }
 
-let create = async function create(background){
+let create = async function create(background, content){
     isValidString(background);
+    isValidString(content);
     const flyersCollection = await flyers();
 
     let elements = [];
@@ -80,6 +81,7 @@ let create = async function create(background){
 
     let newFlyer = {
         background: background,
+        content: content,
         elements: elements
     };
 
