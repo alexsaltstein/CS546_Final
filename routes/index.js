@@ -1,10 +1,10 @@
 const path = require("path");
 const flyers = require("../data/templateFlyers");
-// const users = require("./users");
 
 const constructorMethod = app => {
     try {
         app.get("/", async (req, res) => {
+          //todo: render login page first then if user is logged in render main
             const flyerCollection = await flyers.getAll();
             res.status(200).render("home", {
                 flyers: flyerCollection
@@ -23,11 +23,14 @@ const constructorMethod = app => {
         app.get("/editFlyer/:id", async (req, res) => {
             try {
                 let x = String(req.params.id);
-                console.log(x);
                 const flyerCollectionid = await flyers.get(x);
-                console.log(flyerCollectionid.content);
                 //res.json(flyerCollectionid);
-                res.status(200).render("EditFlyer/editFlyer", { flyer1: flyerCollectionid.content });
+                res.status(200).render("EditFlyer/editFlyer", {
+                    background: flyerCollectionid.background,
+                    element1:  flyerCollectionid.elements[0].text,
+                    element2:  flyerCollectionid.elements[1].text,
+                    element3:  flyerCollectionid.elements[2].text,
+                    element4:  flyerCollectionid.elements[3].text});
             } catch (e) {
                 res.sendStatus(500).json({ error: e.toString() || 'Server Error', route: req.originalUrl });
             }

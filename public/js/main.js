@@ -1,22 +1,18 @@
 $(document).ready(function () {
     // console.log( "ready!" );
     $(".edit-custom-text1").click(function () {
-        console.log($(this).text());
         $('#exampleModal').modal('show');
         $(".text-tobe-saved").text($(this).text());
     });
     $(".edit-custom-text2").click(function () {
-        console.log($(this).text());
         $('#exampleModal').modal('show');
         $(".text-tobe-saved").text($(this).text());
     });
     $(".edit-custom-text3").click(function () {
-        console.log($(this).text());
         $('#exampleModal').modal('show');
         $(".text-tobe-saved").text($(this).text());
     });
     $(".edit-custom-text4").click(function () {
-        console.log($(this).text());
         $('#exampleModal').modal('show');
         $(".text-tobe-saved").text($(this).text());
     });
