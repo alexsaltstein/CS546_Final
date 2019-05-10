@@ -1,90 +1,52 @@
 $(document).ready(function () {
     // console.log( "ready!" );
-    $(".edit-custom-text1").click(function () {
+    $(".edit-custom-generic").click(function () {
         $('#exampleModal').modal('show');
-        $(".text-tobe-saved").text($(this).text());
-    });
-    $(".edit-custom-text2").click(function () {
-        $('#exampleModal').modal('show');
-        $(".text-tobe-saved").text($(this).text());
-    });
-    $(".edit-custom-text3").click(function () {
-        $('#exampleModal').modal('show');
-        $(".text-tobe-saved").text($(this).text());
-    });
-    $(".edit-custom-text4").click(function () {
-        $('#exampleModal').modal('show');
-        $(".text-tobe-saved").text($(this).text());
+        $(".text-tobe-saved1").text($(".edit-custom-text1").text());
+        $(".text-tobe-saved2").text($(".edit-custom-text2").text());
+        $(".text-tobe-saved3").text($(".edit-custom-text3").text());
+        $(".text-tobe-saved4").text($(".edit-custom-text4").text());
     });
 
     $(".save-flyer-action").click(function () {
         //jquery ajax action
-        $(".edit-custom-text1").text($(".text-tobe-saved").val());
+        $(".edit-custom-text1").text($(".text-tobe-saved1").val());
+        $(".edit-custom-text2").text($(".text-tobe-saved2").val());
+        $(".edit-custom-text3").text($(".text-tobe-saved3").val());
+        $(".edit-custom-text4").text($(".text-tobe-saved4").val());
         $('#exampleModal').modal('hide');
     });
-    $(".save-flyer-action").click(function () {
-        //jquery ajax action
-        $(".edit-custom-text2").text($(".text-tobe-saved").val());
-        $('#exampleModal').modal('hide');
-    });
-    $(".save-flyer-action").click(function () {
-        //jquery ajax action
-        $(".edit-custom-text3").text($(".text-tobe-saved").val());
-        $('#exampleModal').modal('hide');
-    });
-    $(".save-flyer-action").click(function () {
-        //jquery ajax action
-        $(".edit-custom-text4").text($(".text-tobe-saved").val());
-        $('#exampleModal').modal('hide');
-    });
-
-    // $(".color-button").click(function () {
-    // $('.Blue').click(function() {
-    //     var color = $( this ).css( "background-color" );
-    //     //$(".edit-custom-text").text($(this).css('color', 'red'));
-    //     $(".edit-custom-text").html(color);
-    //     $(".text-tobe-saved").html(color);
-    // });
-    // });
-
-    // $(".Blue").on('mouseenter', event => {
-    //     $(".save-flyer-action").click(function(){
-    //         $(".edit-custom-text").animate({
-    //             color: '#FFFFFF',
-    //             backgroundColor: '#000000'
-    //         }, 300);
-    //     })
-    // });
 
     $(".dropdown-item1").click(function () {
-        $(".btn-secondary").text($(this).text());
+        $(".btn-color").text($(this).text());
         $(".save-flyer-action").click(function () {
-            $(".edit-custom-text").text($(".text-tobe-saved").val()).css('color', 'blue');
+            $(".edit-custom-text1").text($(".text-tobe-saved1").val()).css('color', 'blue');
+            $(".edit-custom-text2").text($(".text-tobe-saved2").val()).css('color', 'blue');
+            $(".edit-custom-text3").text($(".text-tobe-saved3").val()).css('color', 'blue');
+            $(".edit-custom-text4").text($(".text-tobe-saved4").val()).css('color', 'blue');
             //$(".text-tobe-saved").css('color', 'red').val();
         })
     })
 
     $(".dropdown-item2").click(function () {
-        $(".btn-secondary").text($(this).text());
+        $(".btn-color").text($(this).text());
         $(".save-flyer-action").click(function () {
-            $(".edit-custom-text").text($(".text-tobe-saved").val()).css('color', 'green');
+            $(".edit-custom-text1").text($(".text-tobe-saved1").val()).css('color', 'green');
+            $(".edit-custom-text2").text($(".text-tobe-saved2").val()).css('color', 'green');
+            $(".edit-custom-text3").text($(".text-tobe-saved3").val()).css('color', 'green');
+            $(".edit-custom-text4").text($(".text-tobe-saved4").val()).css('color', 'green');
             //$(".text-tobe-saved").css('color', 'red').val();
         })
     })
 
     $(".dropdown-item3").click(function () {
-        $(".btn-secondary").text($(this).text());
+        $(".btn-color").text($(this).text());
         $(".save-flyer-action").click(function () {
-            $(".edit-custom-text").text($(".text-tobe-saved").val()).css('color', 'red');
-            //$(".text-tobe-saved").css('color', 'red').val();
+            $(".edit-custom-text1").text($(".text-tobe-saved1").val()).css('color', 'red');
+            $(".edit-custom-text2").text($(".text-tobe-saved2").val()).css('color', 'red');
+            $(".edit-custom-text3").text($(".text-tobe-saved3").val()).css('color', 'red');
+            $(".edit-custom-text4").text($(".text-tobe-saved4").val()).css('color', 'red');
         })
     })
-
-    // $(".dropdown-item3").click(function () {
-    //     $(".btn-secondary").text($(this).text());
-    //     $(".save-flyer-action").click(function () {
-    //         $(".edit-custom-text").text($(".text-tobe-saved").val()).css('color', 'red');
-    //         //$(".text-tobe-saved").css('color', 'red').val();
-    //     })
-    // })
+    
 });
