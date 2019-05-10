@@ -1,6 +1,21 @@
 $(document).ready(function () {
     // console.log( "ready!" );
-    $(".edit-custom-text").click(function () {
+    $(".edit-custom-text1").click(function () {
+        console.log($(this).text());
+        $('#exampleModal').modal('show');
+        $(".text-tobe-saved").text($(this).text());
+    });
+    $(".edit-custom-text2").click(function () {
+        console.log($(this).text());
+        $('#exampleModal').modal('show');
+        $(".text-tobe-saved").text($(this).text());
+    });
+    $(".edit-custom-text3").click(function () {
+        console.log($(this).text());
+        $('#exampleModal').modal('show');
+        $(".text-tobe-saved").text($(this).text());
+    });
+    $(".edit-custom-text4").click(function () {
         console.log($(this).text());
         $('#exampleModal').modal('show');
         $(".text-tobe-saved").text($(this).text());
@@ -8,7 +23,22 @@ $(document).ready(function () {
 
     $(".save-flyer-action").click(function () {
         //jquery ajax action
-        $(".edit-custom-text").text($(".text-tobe-saved").val());
+        $(".edit-custom-text1").text($(".text-tobe-saved").val());
+        $('#exampleModal').modal('hide');
+    });
+    $(".save-flyer-action").click(function () {
+        //jquery ajax action
+        $(".edit-custom-text2").text($(".text-tobe-saved").val());
+        $('#exampleModal').modal('hide');
+    });
+    $(".save-flyer-action").click(function () {
+        //jquery ajax action
+        $(".edit-custom-text3").text($(".text-tobe-saved").val());
+        $('#exampleModal').modal('hide');
+    });
+    $(".save-flyer-action").click(function () {
+        //jquery ajax action
+        $(".edit-custom-text4").text($(".text-tobe-saved").val());
         $('#exampleModal').modal('hide');
     });
 
