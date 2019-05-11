@@ -41,20 +41,19 @@ let get = async function get(id){
     return flyer;
 }
 
-let updateElement = async function updateElement(id, elementid, text, size, color){
+let updateElement = async function updateElement(id, elementid, text, color){
     if (!id) throw "You must provide an id to search for";
     if (!isValidNum(elementid) || elementid < 0 || elementid > 3) throw "You must provide an element id to update";
     isValidString(text);
-    if (!isValidNum(size) || size <= 0) throw "You must provide a valid size to change";
     isValidString(color);
     
     const flyersCollection = await flyers();
 
     const flyer = await get(id);
+    
     let newElements = flyer.elements;
     newElements[elementid] = {
         text: text,
-        size: size,
         color: color
     };
 
@@ -68,17 +67,9 @@ let updateElement = async function updateElement(id, elementid, text, size, colo
 
 let create = async function create(background, elements){
     isValidString(background);
+    if(!elements) throw "You must provide elements";
     const flyersCollection = await flyers();
-
-    // let elements = [];
-    // for (i = 1; i <=4; i++){
-    //     elements.push({
-    //         text: "template text",
-    //         size: 10,
-    //         color: "#000000"
-    //     });
-    // }
-
+    
     let newFlyer = {
         _id: uuid.v4(),
         background: background,

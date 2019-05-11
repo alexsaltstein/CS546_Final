@@ -109,6 +109,10 @@ const constructMethod = app=>{
     app.use("/register", registerRoutes);
     app.use("/flyers",flyerRoutes);
     app.use("/private", privateRoutes);
+
+    app.get("*", (req, res) =>{
+        res.status(404).send("error 404: page not found");
+    })
     
 };
 

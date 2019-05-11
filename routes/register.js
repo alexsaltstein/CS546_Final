@@ -7,8 +7,8 @@ router.get("/",async (req,res) =>{
 });
 
 router.post("/", async (req,res) =>{
-    console.log("a");
-    console.log(req.body);
+    //console.log("a");
+    //console.log(req.body);
     let userInfo = req.body;
     let hashedPassword = bcrypt.hashSync(userInfo.password, 3);
     try {
