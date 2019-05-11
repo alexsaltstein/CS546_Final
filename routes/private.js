@@ -12,10 +12,10 @@ router.get("/", async (req, res) => {
           fs.push({
               id: flyerCollectionid._id,
             background: flyerCollectionid.background,
-            element1:  flyerCollectionid.elements[0].text,
-            element2:  flyerCollectionid.elements[1].text,
-            element3:  flyerCollectionid.elements[2].text,
-            element4:  flyerCollectionid.elements[3].text
+            element1:  flyerCollectionid.elements[0],
+            element2:  flyerCollectionid.elements[1],
+            element3:  flyerCollectionid.elements[2],
+            element4:  flyerCollectionid.elements[3]
           });
       }
       res.status(200).render("myflyers", {
@@ -32,10 +32,10 @@ router.get("/:id", async (req, res) => {
         res.status(200).render("EditFlyer/editFlyer", {
             id: flyerCollectionid._id,
             background: flyerCollectionid.background,
-            element1:  flyerCollectionid.elements[0].text,
-            element2:  flyerCollectionid.elements[1].text,
-            element3:  flyerCollectionid.elements[2].text,
-            element4:  flyerCollectionid.elements[3].text});
+            element1:  flyerCollectionid.elements[0],
+            element2:  flyerCollectionid.elements[1],
+            element3:  flyerCollectionid.elements[2],
+            element4:  flyerCollectionid.elements[3]});
     } catch (e) {
         res.sendStatus(500).json({ error: e.toString() || 'Server Error', route: req.originalUrl });
     }
