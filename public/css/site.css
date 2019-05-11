@@ -61,7 +61,7 @@
     font-size: 14px;
     text-align: center;
     font-weight: bold;
-    
+
 }
 
 .welcome{
@@ -69,3 +69,13 @@
 }
 
 
+.login-fields{
+    margin: auto;
+}
+
+.reg-table{
+    margin:auto;
+}
+p{
+    text-align: center;
+}
