@@ -11,44 +11,36 @@ const main = async () => {
     const elements = [
         {
             text: "hi",
-            size: 10,
             color: "#000000"
         },
         {
             text: "hi",
-            size: 10,
             color: "#000000"
         },
         {
             text: "hi",
-            size: 10,
             color: "#000000"
         },
         {
             text: "hi",
-            size: 10,
             color: "#000000"
         }
     ];
     const elements2 = [
         {
             text: "yellow",
-            size: 10,
             color: "#000000"
         },
         {
             text: "orange",
-            size: 10,
             color: "#000000"
         },
         {
             text: "hfdsa",
-            size: 10,
             color: "#000000"
         },
         {
             text: "hi",
-            size: 10,
             color: "#000000"
         }
     ];

@@ -17,37 +17,33 @@ $(document).ready(function () {
         $.ajax({
             url: "/flyers",
             type: 'POST',
-            data:{
-                id:$(".card-main-div").attr("id"),
+            data: {
+                id: $(".card-main-div").attr("id"),
                 background: $(".card-main-div").attr("name"),
-                elements:[
+                elements: [
                     {
                         text: $(".text-tobe-saved1").val(),
-                        size: 10,
-                        color: "#000000"
+                        color: $(".edit-custom-text1").css("color")
                     },
                     {
                         text: $(".text-tobe-saved2").val(),
-                        size: 10,
-                        color: "#000000"
+                        color: $(".edit-custom-text2").css("color")
                     },
                     {
                         text: $(".text-tobe-saved3").val(),
-                        size: 10,
-                        color: "#000000"
+                        color: $(".edit-custom-text3").css("color")
                     },
                     {
                         text: $(".text-tobe-saved4").val(),
-                        size: 10,
-                        color: "#000000"
+                        color: $(".edit-custom-text4").css("color")
                     }
                 ]
             },
             dataType: 'json', // added data type
-            success: function(res) {
+            success: function (res) {
                 alert("success");
             },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert("fail");
             }
         });
@@ -56,34 +52,28 @@ $(document).ready(function () {
 
     $(".dropdown-item1").click(function () {
         $(".btn-color").text($(this).text());
-        $(".save-flyer-action").click(function () {
-            $(".edit-custom-text1").text($(".text-tobe-saved1").val()).css('color', 'blue');
-            $(".edit-custom-text2").text($(".text-tobe-saved2").val()).css('color', 'blue');
-            $(".edit-custom-text3").text($(".text-tobe-saved3").val()).css('color', 'blue');
-            $(".edit-custom-text4").text($(".text-tobe-saved4").val()).css('color', 'blue');
-            //$(".text-tobe-saved").css('color', 'red').val();
-        })
-    })
+        $(".edit-custom-text1").text($(".text-tobe-saved1").val()).css('color', 'blue');
+        $(".edit-custom-text2").text($(".text-tobe-saved2").val()).css('color', 'blue');
+        $(".edit-custom-text3").text($(".text-tobe-saved3").val()).css('color', 'blue');
+        $(".edit-custom-text4").text($(".text-tobe-saved4").val()).css('color', 'blue');
+        //$(".text-tobe-saved").css('color', 'red').val();
+    });
 
     $(".dropdown-item2").click(function () {
         $(".btn-color").text($(this).text());
-        $(".save-flyer-action").click(function () {
-            $(".edit-custom-text1").text($(".text-tobe-saved1").val()).css('color', 'green');
-            $(".edit-custom-text2").text($(".text-tobe-saved2").val()).css('color', 'green');
-            $(".edit-custom-text3").text($(".text-tobe-saved3").val()).css('color', 'green');
-            $(".edit-custom-text4").text($(".text-tobe-saved4").val()).css('color', 'green');
-            //$(".text-tobe-saved").css('color', 'red').val();
-        })
-    })
+        $(".edit-custom-text1").text($(".text-tobe-saved1").val()).css('color', 'green');
+        $(".edit-custom-text2").text($(".text-tobe-saved2").val()).css('color', 'green');
+        $(".edit-custom-text3").text($(".text-tobe-saved3").val()).css('color', 'green');
+        $(".edit-custom-text4").text($(".text-tobe-saved4").val()).css('color', 'green');
+        //$(".text-tobe-saved").css('color', 'red').val();
+    });
 
     $(".dropdown-item3").click(function () {
         $(".btn-color").text($(this).text());
-        $(".save-flyer-action").click(function () {
-            $(".edit-custom-text1").text($(".text-tobe-saved1").val()).css('color', 'red');
-            $(".edit-custom-text2").text($(".text-tobe-saved2").val()).css('color', 'red');
-            $(".edit-custom-text3").text($(".text-tobe-saved3").val()).css('color', 'red');
-            $(".edit-custom-text4").text($(".text-tobe-saved4").val()).css('color', 'red');
-        })
-    })
-    
+        $(".edit-custom-text1").text($(".text-tobe-saved1").val()).css('color', 'red');
+        $(".edit-custom-text2").text($(".text-tobe-saved2").val()).css('color', 'red');
+        $(".edit-custom-text3").text($(".text-tobe-saved3").val()).css('color', 'red');
+        $(".edit-custom-text4").text($(".text-tobe-saved4").val()).css('color', 'red');
+    });
+
 });
