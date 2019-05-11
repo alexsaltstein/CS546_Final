@@ -3,11 +3,11 @@ const router = express.Router();
 const data = require("../data");
 const bcrypt = require("bcryptjs");
 router.get("/",async (req,res) =>{
-    // console.log("/ dir");
     res.render("admin/register", {});
 });
 
 router.post("/", async (req,res) =>{
+    console.log("a");
     console.log(req.body);
     let userInfo = req.body;
     let hashedPassword = bcrypt.hashSync(userInfo.password, 3);
@@ -16,19 +16,16 @@ router.post("/", async (req,res) =>{
         res.redirect("/login");
     } catch (err) {
         // console.log(err);
-        res.render("/register",{error: err});
+        res.render("admin/error",{error: err});
     }
 });
-router.get("/:email", async (req,res) =>{
-    // console.log(req.params.user);
+router.post("/check", async (req,res) =>{
+    let email = req.body.email.toString();
     try {
-        let user = await data.users.getByEmail(req.params.user);
-        // console.log("a");
-        // console.log(user);
-        // console.log("a");
-        res.sendStatus(200);
+        let user = await data.users.getByEmail(email);
+        res.status(200).send(user);
     } catch (err) {
-        // console.log("a");
+        console.log(err);
         res.sendStatus(404);
     }
 });
