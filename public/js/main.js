@@ -14,6 +14,43 @@ $(document).ready(function () {
         $(".edit-custom-text2").text($(".text-tobe-saved2").val());
         $(".edit-custom-text3").text($(".text-tobe-saved3").val());
         $(".edit-custom-text4").text($(".text-tobe-saved4").val());
+        $.ajax({
+            url: "/flyers",
+            type: 'POST',
+            data:{
+                id:$(".card-main-div").attr("id"),
+                background: $(".card-main-div").attr("name"),
+                elements:[
+                    {
+                        text: $(".text-tobe-saved1").val(),
+                        size: 10,
+                        color: "#000000"
+                    },
+                    {
+                        text: $(".text-tobe-saved2").val(),
+                        size: 10,
+                        color: "#000000"
+                    },
+                    {
+                        text: $(".text-tobe-saved3").val(),
+                        size: 10,
+                        color: "#000000"
+                    },
+                    {
+                        text: $(".text-tobe-saved4").val(),
+                        size: 10,
+                        color: "#000000"
+                    }
+                ]
+            },
+            dataType: 'json', // added data type
+            success: function(res) {
+                alert("success");
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("fail");
+            }
+        });
         $('#exampleModal').modal('hide');
     });
 

@@ -51,6 +51,7 @@ let updateElement = async function updateElement(id, elementid, text, size, colo
     const flyersCollection = await flyers();
 
     const flyer = await get(id);
+    
     let newElements = flyer.elements;
     newElements[elementid] = {
         text: text,
@@ -68,6 +69,7 @@ let updateElement = async function updateElement(id, elementid, text, size, colo
 
 let create = async function create(background, elements){
     isValidString(background);
+    if(!elements) throw "You must provide elements";
     const flyersCollection = await flyers();
 
     // let elements = [];

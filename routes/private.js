@@ -30,6 +30,7 @@ router.get("/:id", async (req, res) => {
         const flyerCollectionid = await flyers.get(x);
         //res.json(flyerCollectionid);
         res.status(200).render("EditFlyer/editFlyer", {
+            id: flyerCollectionid._id,
             background: flyerCollectionid.background,
             element1:  flyerCollectionid.elements[0].text,
             element2:  flyerCollectionid.elements[1].text,
