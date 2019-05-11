@@ -50,10 +50,22 @@
     display: inline;
     font-family: Arial;
     font-size: 30px;
-    
-
 }
     
 .navbar{
     border: 2px solid;
 }
+
+.error{
+    color: rgb(152, 16, 16);
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.welcome{
+    text-align: center;
+}
+
+
