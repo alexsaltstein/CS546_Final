@@ -1,16 +1,16 @@
 $(function(){
     $("#email").blur(function(){
-        let username = this.value;
-        
+        let email = this.value;
         $.ajax({
-            url: "/register/"+username,
-            type: 'GET',
-            // dataType: 'json', // added data type
+            url: "/register/check",
+            type: 'POST',
+            data:{email:email},
+            dataType: 'json', // added data type
             success: function(res) {
-                $("#checkUsername").attr({type:"textarea"}).val("Sorry, email exists");
+                $("#checkUsername").attr({type:"text"}).val("Sorry, email exists");
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
-                $("#checkUsername").attr({type:"textarea"}).val("You can use this email");
+                $("#checkUsername").attr({type:"textarea"}).val("This email is not registered");
             }
         });
     });
