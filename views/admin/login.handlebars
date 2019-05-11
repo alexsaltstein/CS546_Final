@@ -1,8 +1,8 @@
 <h1 class="welcome"> Welcome to Flyer Creater </h1>
 <br>
-<h3> Login </h2>
+<h3 class="welcome"> Login </h2>
 <br>
-<table>
+<table class = "login-fields">
 <form action="/login" method="POST" id="login-form">
   <tr><td><label for="username">Email</label></td>
   <td><input type="text" id="username" name="username"></td>
@@ -14,7 +14,7 @@
   <button type="submit">Login</button>
 </form>
 {{#if hasErrors}}
-    <p>You did not enter a valid username and/or password</p>
+    <p class ="error">You did not enter a valid username and/or password</p>
 {{/if}}
 <br>
 <br>
