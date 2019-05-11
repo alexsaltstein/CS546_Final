@@ -50,6 +50,7 @@
     display: inline;
     font-family: Arial;
     font-size: 30px;
+    font-weight: bold;
 }
     
 .navbar{
@@ -77,5 +78,18 @@
 }
 
 p{
+    text-align: center;
+}
+
+.logout-msg{
+    text-align: center;
+}
+.back-to-log{
+    text-align: center;
+}
+
+.log-reg-button{
+    position: absolute;
+    top: 50%;
     text-align: center;
 }
