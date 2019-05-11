@@ -16,7 +16,7 @@ router.post("/", async (req,res) =>{
         res.redirect("/login");
     } catch (err) {
         // console.log(err);
-        res.render("admin/error",{error: err});
+        res.render("/register",{error: err});
     }
 });
 router.get("/:email", async (req,res) =>{
