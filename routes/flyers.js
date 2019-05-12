@@ -41,7 +41,7 @@ router.post("/", async (req,res) =>{
         flyer = await userFlyers.get(fid);
         if(flyer != null)
             for(i = 0; i < flyerInfo.elements.length; i++){
-                const f = await userFlyers.updateElement(flyer._id, i, flyerInfo.elements[i].text, flyerInfo.elements[i].color);
+                const f = await userFlyers.updateElement(flyer._id, i, flyerInfo.elements[i].text, flyerInfo.elements[i].color,flyerInfo.elements[i].font);
             }
     }catch(e){
         try{

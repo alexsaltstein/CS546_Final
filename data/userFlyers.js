@@ -41,11 +41,12 @@ let get = async function get(id){
     return flyer;
 }
 
-let updateElement = async function updateElement(id, elementid, text, color){
+let updateElement = async function updateElement(id, elementid, text, color, font){
     if (!id) throw "You must provide an id to search for";
     if (!isValidNum(elementid) || elementid < 0 || elementid > 3) throw "You must provide an element id to update";
     isValidString(text);
     isValidString(color);
+    isValidString(font);
     
     const flyersCollection = await flyers();
 
@@ -54,7 +55,8 @@ let updateElement = async function updateElement(id, elementid, text, color){
     let newElements = flyer.elements;
     newElements[elementid] = {
         text: text,
-        color: color
+        color: color,
+        font: font
     };
 
     return flyersCollection
@@ -69,7 +71,7 @@ let create = async function create(background, elements){
     isValidString(background);
     if(!elements) throw "You must provide elements";
     const flyersCollection = await flyers();
-    
+
     let newFlyer = {
         _id: uuid.v4(),
         background: background,

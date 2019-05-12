@@ -19,6 +19,8 @@ $(document).ready(function () {
             console.log("something went wrong");
             $(".btn-color").text("Error");
         }
+        let font = $(this).css("font-family").split(",")[0];
+        $(".btn-font").text(font);
     });
 
     $(".save-flyer-action").click(function () {
@@ -33,6 +35,8 @@ $(document).ready(function () {
             $(".edit-custom-text3").text($(".text-tobe-saved3").val());
             $(".edit-custom-text4").text($(".text-tobe-saved4").val());
             $(".edit-custom-generic").css('color', $(".btn-color").text());
+            $(".edit-custom-generic").css('font-family', `${$(".btn-font").text()} , Times, serif`);
+            
             $.ajax({
                 url: "/flyers",
                 type: 'POST',
@@ -42,19 +46,23 @@ $(document).ready(function () {
                     elements: [
                         {
                             text: $(".text-tobe-saved1").val(),
-                            color: $(".edit-custom-text1").css("color")
+                            color: $(".edit-custom-generic").css("color"),
+                            font: $(".edit-custom-generic").css("font-family")
                         },
                         {
                             text: $(".text-tobe-saved2").val(),
-                            color: $(".edit-custom-text2").css("color")
+                            color: $(".edit-custom-generic").css("color"),
+                            font: $(".edit-custom-generic").css("font-family")
                         },
                         {
                             text: $(".text-tobe-saved3").val(),
-                            color: $(".edit-custom-text3").css("color")
+                            color: $(".edit-custom-generic").css("color"),
+                            font: $(".edit-custom-generic").css("font-family")
                         },
                         {
                             text: $(".text-tobe-saved4").val(),
-                            color: $(".edit-custom-text4").css("color")
+                            color: $(".edit-custom-generic").css("color"),
+                            font: $(".edit-custom-generic").css("font-family")
                         }
                     ]
                 },
@@ -70,30 +78,11 @@ $(document).ready(function () {
         }
     });
 
-    $(".dropdown-item").click(function () {
+    $(".color-choice").click(function () {
         $(".btn-color").text($(this).text());
     });
-
-    // $(".dropdown-item1").click(function () {
-    //     $(".btn-color").text($(this).text());
-    //     $(".text-tobe-saved").css('color', 'red').val();
-    // });
-
-    // $(".dropdown-item2").click(function () {
-    //     $(".btn-color").text($(this).text());
-    //     $(".edit-custom-text1").text($(".text-tobe-saved1").val()).css('color', 'green');
-    //     $(".edit-custom-text2").text($(".text-tobe-saved2").val()).css('color', 'green');
-    //     $(".edit-custom-text3").text($(".text-tobe-saved3").val()).css('color', 'green');
-    //     $(".edit-custom-text4").text($(".text-tobe-saved4").val()).css('color', 'green');
-    //     $(".text-tobe-saved").css('color', 'red').val();
-    // });
-
-    // $(".dropdown-item3").click(function () {
-    //     $(".btn-color").text($(this).text());
-    //     $(".edit-custom-text1").text($(".text-tobe-saved1").val()).css('color', 'red');
-    //     $(".edit-custom-text2").text($(".text-tobe-saved2").val()).css('color', 'red');
-    //     $(".edit-custom-text3").text($(".text-tobe-saved3").val()).css('color', 'red');
-    //     $(".edit-custom-text4").text($(".text-tobe-saved4").val()).css('color', 'red');
-    // });
+    $(".font-choice").click(function () {
+        $(".btn-font").text($(this).text());
+    });
 
 });
