@@ -1,12 +1,29 @@
-<div>
-    <ul class=navbar>
-        <li class=logo> Flyer Creater </li>
-        <li class=nav><a href="/">Home</a></li>
-        <li class=nav><a href="/private">My Profile</a></li>
-        <li class=nav><a href="/logout">Logout</a></li>
-    </ul>
-</div>
 
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-default fixed-top">
+    <a class="navbar-brand navbar-dark">
+      <h1 class = "brand">Flyer Creater </h1>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <table>
+        <tr>
+          <ul class="navbar-nav">
+            <li class="nav-item active"> <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="/private">My Profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+          </ul>
+        </tr>
+      </table>
+    </div>
+  </nav>
+</div>
+<br>
+<br>
+<br>
+<br>
+  <p> <h2  class = "welcome"> Choose a Template to Start Making Flyers </h2> </p>
+<br>
 <div class="row card-outer-wrapper">
   {{#each flyers}}
   <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
