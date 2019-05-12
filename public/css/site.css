@@ -1,8 +1,13 @@
+body{
+    background-image: url("login-bg.png");
+}
+
 .content-div span {
     cursor: pointer;
     display: inline-block;
     white-space: initial;
 }
+
 
 .card-text-wrapper {
     margin: 0px auto !important;
@@ -78,8 +83,9 @@
     font-size: 30px;
 }
     
-.navbar{
-    border: 2px solid;
+
+.logout{
+    text-align: center;
 }
 
 .error{
@@ -104,4 +110,14 @@
 
 p{
     text-align: center;
+}
+
+.btn-primary{
+    background-color: #1a5ca3 !important;
+}
+.links{
+    color: #1a5ca3;
+}
+.back-to-log{
+    color: #1a5ca3;
 }
