@@ -10,19 +10,19 @@ const main = async () => {
     await db.dropDatabase();
     const elements = [
         {
-            text: "hi",
+            text: "Line1",
             color: "rgb(0, 0, 0)"
         },
         {
-            text: "hi",
+            text: "Line2",
             color: "rgb(0, 0, 0)"
         },
         {
-            text: "hi",
+            text: "Line3",
             color: "rgb(0, 0, 0)"
         },
         {
-            text: "hi",
+            text: "Line4",
             color: "rgb(0, 0, 0)"
         }
     ];
