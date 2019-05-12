@@ -1,87 +1,46 @@
-{{!-- 
-.nav{
-    display: inline;
-    text-align: center;
-
-}
-
-.navbar{
-    border: 1px solid;
-} --}}
-
-
-
 <div>
-        {{!-- change this based on what the pages are called --}}
-        <ul class = navbar>  
-            <li class = logo> Flyer Creater </li>
-            <li class=nav><a href = "/">Home</a></li>
-            <li class=nav><a href="/private">My Profile</a></li>
-            <li class=nav><a href = "/logout">Logout</a></li>
-        </ul>
-
+    <ul class=navbar>
+        <li class=logo> Flyer Creater </li>
+        <li class=nav><a href="/">Home</a></li>
+        <li class=nav><a href="/private">My Profile</a></li>
+        <li class=nav><a href="/logout">Logout</a></li>
+    </ul>
 </div>
-
-
-<h1> My Profile </h1>   
-
-
+<h1> My Profile </h1>
 <div>
-
     <br>
-
     <h1> {{firstName}}{{lastName}} </h1>
-
     <h3> {{email}} </h3>
-
-
 </div>
-
-
 <div>
-
     <h1>Flyers</h1>
-
-
 </div>
 
-
-    {{!-- <table class = "user-flyers">
-        {{#if flyers.length}}
-            {{#each flyers}}
-            <tr>
-                <td>
-                    <a href = "/editFlyer/{{id}}">  <img src = "flyer from database"></a>
-
-                    <a href="path to the flyer image" download="myflyer.pdf"> Download Flyer </a>
-
-                </td>
-            </tr>
-            {{/each}}
-        {{/if}}
-    </table> --}}
-    {{#if hasFlyers}}
-    {{#each flyers}}
+{{#if hasFlyers}}
+{{#each flyers}}
+<div class="card-main-div" style="background:url('/public/images/{{background}}') no-repeat;">
     <a href="/private/{{id}}">
-    <div class="card-main-div" style="background:url('/public/images/{{background}}') no-repeat;">
-    <div class="card-text-wrapper">
-        <div class="content-div content-1-div">
-            <span style="border: 1px dashed; color:{{element1.color}};text-decoration:  none;" class="">{{element1.text}}</span>
+        <div class="card-text-wrapper">
+            <div class="content-div content-1-div">
+                <span style="border: 1px dashed; color:{{element1.color}};text-decoration:  none;"
+                    class="">{{element1.text}}</span>
+            </div>
+            <div class="content-div content-1-div">
+                <span style="border: 1px dashed; color:{{element2.color}};text-decoration:  none;"
+                    class="">{{element2.text}}</span>
+            </div>
+            <div class="content-div content-1-div">
+                <span style="border: 1px dashed; color:{{element3.color}};text-decoration:  none;"
+                    class="">{{element3.text}}</span>
+            </div>
+            <div class="content-div content-1-div">
+                <span style="border: 1px dashed; color:{{element4.color}};text-decoration:  none;"
+                    class="">{{element4.text}}</span>
+            </div>
         </div>
-        <div class="content-div content-1-div">
-            <span style="border: 1px dashed; color:{{element2.color}};text-decoration:  none;" class="">{{element2.text}}</span>
-        </div>
-        <div class="content-div content-1-div">
-            <span style="border: 1px dashed; color:{{element3.color}};text-decoration:  none;" class="">{{element3.text}}</span>
-        </div>
-        <div class="content-div content-1-div">
-            <span style="border: 1px dashed; color:{{element4.color}};text-decoration:  none;" class="">{{element4.text}}</span>
-        </div>
-    </div>
-    </div>
     </a>
+</div>
 {{/each}}
 {{/if}}
 
 </div>
-
