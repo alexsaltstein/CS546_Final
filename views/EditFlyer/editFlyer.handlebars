@@ -12,19 +12,19 @@
     id="{{id}}">
     <div class="card-text-wrapper">
         <div class="content-div content-1-div">
-            <span style="border: 1px dashed; color:{{element1.color}};"
+            <span style="border: 1px dashed; color:{{element1.color}}; font-family:{{element1.font}};"
                 class="edit-custom-generic edit-custom-text1">{{element1.text}}</span>
         </div>
         <div class="content-div content-1-div">
-            <span style="border: 1px dashed; color:{{element2.color}};"
+            <span style="border: 1px dashed; color:{{element2.color}}; font-family:{{element2.font}};"
                 class="edit-custom-generic edit-custom-text2">{{element2.text}}</span>
         </div>
         <div class="content-div content-1-div">
-            <span style="border: 1px dashed; color:{{element3.color}};"
+            <span style="border: 1px dashed; color:{{element3.color}}; font-family:{{element3.font}};"
                 class="edit-custom-generic edit-custom-text3">{{element3.text}}</span>
         </div>
         <div class="content-div content-1-div">
-            <span style="border: 1px dashed; color:{{element4.color}};"
+            <span style="border: 1px dashed; color:{{element4.color}}; font-family:{{element4.font}};"
                 class="edit-custom-generic edit-custom-text4">{{element4.text}}</span>
         </div>
     </div>
@@ -51,10 +51,22 @@
                         Black
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item" type="button">Black</button>
-                        <button class="dropdown-item" type="button">Blue</button>
-                        <button class="dropdown-item" type="button">Green</button>
-                        <button class="dropdown-item" type="button">Red</button>
+                        <button class="dropdown-item color-choice" type="button">Black</button>
+                        <button class="dropdown-item color-choice" type="button">Blue</button>
+                        <button class="dropdown-item color-choice" type="button">Green</button>
+                        <button class="dropdown-item color-choice" type="button">Red</button>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-font dropdown-toggle" type="button" id="dropdownMenu2"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Brush Script MT
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item font-choice" type="button">Brush Script MT</button>
+                        <button class="dropdown-item font-choice" type="button">Times New Roman</button>
+                        <button class="dropdown-item font-choice" type="button">Impact</button>
+                        <button class="dropdown-item font-choice" type="button">Courier</button>
                     </div>
                 </div>
 
