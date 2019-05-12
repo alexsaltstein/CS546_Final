@@ -1,51 +1,59 @@
+<br>
 <h1 class="welcome"> Welcome to Flyer Creater </h1>
-<br>
-<h3 class = "welcome"> Make a Flyer Creater Account </h2>
-<br>
-<form action="/register" method="POST" id="register-form">
-  <table class = "reg-table">
-   <tr>
-  <div>
-    <td><label for="email">Email</label></td>
-    <td><input type="email" id="email" name="email">
-    <input type="hidden" id="checkUsername" value=""></td>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class = "card card-signin my-5">
+      <div class="card-header">
+        <h3 class="welcome"> Make a Flyer Creater Account </h3>
+      </div>
+
+      <div class="card-body">
+        <form action="/register" method="POST" id="register-form">
+            <div class = "form-label group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" class = "form-control">
+              <output type="hidden" id="checkUsername" value="">
+            </div>
+
+            <div class = "form-label group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" class = "form-control">
+            </div>
+
+            <div class = "form-label group">
+              <label for="checkPassword">Check password</label>
+              <input type="password" id="repassword" name="repassword" class = "form-control">
+              <output type="hidden" id="checkpassword" value="">
+            </div>
+
+            <div class = "form-label group">
+              <label for="firstName">First name</label>
+              <input type="text" id="firstName" name="firstName" class = "form-control">
+            </div>
+            <div class = "form-label group">
+              <label for="lastName">Last name</label>
+              <input type="text" id="lastName" name="lastName" class = "form-control">
+            </div>
+            <br>
+              <button class="btn btn-primary btn-block" type="submit">Register</button>
+
+        </form>
+         {{error}}
+
+        <br>
+        <p> Already have an account? <a href="/login"> Login</a></p>
+
+      </div>
   </div>
-  </tr> 
-  <tr>
-  <div>
-    <td><label for="password">Password</label></td>
-    <td><input type="password" id="password" name="password"></td>
+    </div>
   </div>
-  </tr>
-  <tr>
-  <div>
-     <td><label for="checkPassword">Check password</label></td>
-     <td><input type="password" id="repassword" name="repassword">
-    <input type="hidden" id="checkpassword" value=""></td>
-  </div>
-  </tr>
-  <tr>
-  <div>
-   <td> <label for="firstName">First name</label></td>
-    <td><input type="text" id="firstName" name="firstName"></td>
-  </div>
-  </tr>
-  <tr>
-  <div>
-  
-    <td><label for="lastName">Last name</label></td>
-    <td><input type="text" id="lastName" name="lastName"></td>
-  </div>
-  </tr>
-  </table>
-  <br>
-  <div>
-  <button class="log-reg-button"  type="submit">Register</button></div>
-</form>
-{{error}}
-<br>
- <p> Already have an account? <a href="/login"> Login</a></p>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
-</script>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+  </script>
 <script src="/public/js/register.js"></script>
 <script src="/public/js/checkPwd.js"></script>
