@@ -7,10 +7,10 @@ $(function(){
             data:{email:email},
             dataType: 'json', // added data type
             success: function(res) {
-                $("#checkUsername").attr({type:"text"}).val("Sorry, email exists");
+                $("#checkUsername").attr({type:"text"}).val("Invalid email. Email already exists");
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
-                $("#checkUsername").attr({type:"textarea"}).val("This email is not registered");
+                $("#checkUsername").attr({type:"textarea"}).val("This email is valid");
             }
         });
     });

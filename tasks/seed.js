@@ -50,7 +50,7 @@ const main = async () => {
     await templates.create('bogomil-mihaylov-768373-unsplash.jpg', elements);
     await templates.create('nordwood-themes-162462-unsplash.jpg', elements);
 
-    const hash = await bcrypt.hash("1234", saltRounds);
+    const hash = await bcrypt.hash("12345678", saltRounds);
     let u = await users.create("hi", "dsa", "t@gmail.com", hash);
     await users.addFlyer(u._id, String(f._id));
     
