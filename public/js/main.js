@@ -35,7 +35,7 @@ $(document).ready(function () {
             $(".edit-custom-text3").text($(".text-tobe-saved3").val());
             $(".edit-custom-text4").text($(".text-tobe-saved4").val());
             $(".edit-custom-generic").css('color', $(".btn-color").text());
-            $(".edit-custom-generic").css('font-family', $(".btn-font").text());
+            $(".edit-custom-generic").css('font-family', `${$(".btn-font").text()} , Times, serif`);
             
             $.ajax({
                 url: "/flyers",

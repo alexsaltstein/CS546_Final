@@ -34,22 +34,22 @@ const main = async () => {
         {
             text: "yellow",
             color: "rgb(0, 0, 0)",
-            font: "Brush Script MT"
+            font: "Brush Script MT, Times, serif"
         },
         {
             text: "orange",
             color: "rgb(0, 0, 0)",
-            font: "Brush Script MT"
+            font: "Brush Script MT, Times, serif"
         },
         {
             text: "hfdsa",
             color: "rgb(0, 0, 0)",
-            font: "Brush Script MT"
+            font: "Brush Script MT, Times, serif"
         },
         {
             text: "hi",
             color: "rgb(0, 0, 0)",
-            font: "Brush Script MT"
+            font: "Brush Script MT, Times, serif"
         }
     ];
     await templates.create('andrej-lisakov-679177-unsplash.jpg', elements);
