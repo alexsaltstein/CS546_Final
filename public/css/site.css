@@ -125,6 +125,8 @@ p{
 
 .brand{
     color: #ffffff;
+    text-align: center;
+    
 }
 
 .nav-item{
@@ -136,5 +138,28 @@ p{
 }
 
 .active{
-    
+    color: #fdb26b; 
+}
+.main-link{
+    color: white; 
+    font-size: 25px;
+    text-align: center;
+
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.side-link{
+    color: #ffdab8;
+    font-size: 25px;
+    text-align: center;
+}
+
+.jumbotron{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background:contain;
 }
