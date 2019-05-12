@@ -12,8 +12,8 @@ router.post("/", async (req,res) =>{
     let userInfo = req.body;
     let hashedPassword = bcrypt.hashSync(userInfo.password, 3);
     try {
-        if (userInfo.firstName.length > 0 && userInfo.firstName <= 20 &&
-            userInfo.lastName.length > 0 && userInfo.lastName <= 20 &&
+        if (userInfo.firstName.length > 0 && userInfo.firstName.length <= 20 &&
+            userInfo.lastName.length > 0 && userInfo.lastName.length <= 20 &&
             userInfo.email.length > 0 && userInfo.email.length <= 40){
                 await data.users.create(userInfo.firstName,userInfo.lastName, userInfo.email, hashedPassword);
                 res.redirect("/login");
