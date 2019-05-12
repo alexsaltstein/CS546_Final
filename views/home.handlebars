@@ -1,23 +1,24 @@
 <div>
-        {{!-- change this based on what the pages are called --}}
-        <ul class = navbar>  
-            <li class = logo> Flyer Creater </li>
-            <li class=nav><a href = "/">Home</a></li>
-            <li class=nav><a href="/private">My Profile</a></li>
-            <li class=nav><a href = "/logout">Logout</a></li>
-        </ul>
+  {{!-- change this based on what the pages are called --}}
+  <ul class=navbar>
+    <li class=logo> Flyer Creater </li>
+    <li class=nav><a href="/">Home</a></li>
+    <li class=nav><a href="/private">My Profile</a></li>
+    <li class=nav><a href="/logout">Logout</a></li>
+  </ul>
 
 </div>
 
 <div class="row card-outer-wrapper">
 
   {{#each flyers}}
+
+  <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
     <a href="/flyers/{{this._id}}">
-      <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
-        <div class="template-image-wrapper">
-          <img src="/public/images/{{this.background}}" alt="{{this.background}}">
-        </div>
+      <div class="template-image-wrapper">
+        <img src="/public/images/{{this.background}}" alt="{{this.background}}">
       </div>
     </a>
+  </div>
   {{/each}}
 </div>

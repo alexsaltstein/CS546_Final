@@ -1,29 +1,42 @@
 <div>
-        {{!-- change this based on what the pages are called --}}
-        <ul class = navbar>  
-            <li class=nav><a href = "/">Home</a></li>
-            <li class=nav><a href="/private">My Profile</a></li>
-            <li class=nav><a href = "/logout">Logout</a></li>
-        </ul>
+    {{!-- change this based on what the pages are called --}}
+    <ul class=navbar>
+        <li class=nav><a href="/">Home</a></li>
+        <li class=nav><a href="/private">My Profile</a></li>
+        <li class=nav><a href="/logout">Logout</a></li>
+    </ul>
 
 </div>
 
-<div class="card-main-div" name="{{background}}" style="background:url('/public/images/{{background}}') no-repeat;" id="{{id}}">
+<div class="card-main-div" name="{{background}}" style="background:url('/public/images/{{background}}') no-repeat;"
+    id="{{id}}">
     <div class="card-text-wrapper">
         <div class="content-div content-1-div">
-            <span style="border: 1px dashed; color:{{element1.color}};" class="edit-custom-generic edit-custom-text1">{{element1.text}}</span>
+            <span style="border: 1px dashed; color:{{element1.color}};"
+                class="edit-custom-generic edit-custom-text1">{{element1.text}}</span>
         </div>
         <div class="content-div content-1-div">
-            <span style="border: 1px dashed; color:{{element2.color}};" class="edit-custom-generic edit-custom-text2">{{element2.text}}</span>
+            <span style="border: 1px dashed; color:{{element2.color}};"
+                class="edit-custom-generic edit-custom-text2">{{element2.text}}</span>
         </div>
         <div class="content-div content-1-div">
-            <span style="border: 1px dashed; color:{{element3.color}};" class="edit-custom-generic edit-custom-text3">{{element3.text}}</span>
+            <span style="border: 1px dashed; color:{{element3.color}};"
+                class="edit-custom-generic edit-custom-text3">{{element3.text}}</span>
         </div>
         <div class="content-div content-1-div">
-            <span style="border: 1px dashed; color:{{element4.color}};" class="edit-custom-generic edit-custom-text4">{{element4.text}}</span>
+            <span style="border: 1px dashed; color:{{element4.color}};"
+                class="edit-custom-generic edit-custom-text4">{{element4.text}}</span>
         </div>
     </div>
 </div>
+
+<div class="modal-footer">
+    <button type="button" class="btn save-flyer-as-pdf btn-secondary" data-dismiss="modal">Save as PDF</button>
+    <button type="button" class="btn save-flyer-as-image btn-primary">Save as Image</button>
+    <button type="button" class="btn share-flyer btn-primary">Share</button>
+</div>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
