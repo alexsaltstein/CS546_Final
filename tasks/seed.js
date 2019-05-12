@@ -60,6 +60,7 @@ const main = async () => {
 
     const hash = await bcrypt.hash("12345678", saltRounds);
     let u = await users.create("John", "Doe", "t@gmail.com", hash);
+    let newUser = await users.create("Patrick", "Hill", "test@gmail.com", hash);
     await users.addFlyer(u._id, String(f._id));
     
     db.serverConfig.close();
