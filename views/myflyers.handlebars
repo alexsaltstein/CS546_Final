@@ -6,15 +6,8 @@
         <li class=nav><a href="/logout">Logout</a></li>
     </ul>
 </div>
-<h1> My Profile </h1>
-<div>
-    <br>
-    <h1> {{firstName}}{{lastName}} </h1>
-    <h3> {{email}} </h3>
-</div>
-<div>
-    <h1>Flyers</h1>
-</div>
+<h1>Hello, {{firstName}} {{lastName}}</h1>
+<h2>Flyers you have made:</h2>
 
 {{#if hasFlyers}}
 {{#each flyers}}

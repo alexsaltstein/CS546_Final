@@ -19,6 +19,8 @@ router.get("/", async (req, res) => {
           });
       }
       res.status(200).render("myflyers", {
+          firstName: req.session.firstName,
+          lastName: req.session.lastName,
           hasFlyers: fs.length != 0,
           flyers: fs
       });
