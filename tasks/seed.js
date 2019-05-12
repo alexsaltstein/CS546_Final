@@ -1,7 +1,7 @@
-const templates = require("./data/templateFlyers");
-const usersF = require("./data/userFlyers");
-const users = require("./data/users");
-const connection = require("./data/mongoConnection");
+const templates = require("../data/templateFlyers");
+const flyers = require("../data/userFlyers");
+const users = require("../data/users");
+const connection = require("../data/mongoConnection");
 const bcrypt = require("bcryptjs");
 const saltRounds =  3;
 
@@ -11,41 +11,41 @@ const main = async () => {
     const elements = [
         {
             text: "hi",
-            color: "#000000"
+            color: "rgb(0, 0, 0)"
         },
         {
             text: "hi",
-            color: "#000000"
+            color: "rgb(0, 0, 0)"
         },
         {
             text: "hi",
-            color: "#000000"
+            color: "rgb(0, 0, 0)"
         },
         {
             text: "hi",
-            color: "#000000"
+            color: "rgb(0, 0, 0)"
         }
     ];
     const elements2 = [
         {
             text: "yellow",
-            color: "#000000"
+            color: "rgb(0, 0, 0)"
         },
         {
             text: "orange",
-            color: "#000000"
+            color: "rgb(0, 0, 0)"
         },
         {
             text: "hfdsa",
-            color: "#000000"
+            color: "rgb(0, 0, 0)"
         },
         {
             text: "hi",
-            color: "#000000"
+            color: "rgb(0, 0, 0)"
         }
     ];
     await templates.create('bluefence.png', elements);
-    let f = await usersF.create('bluefence.png', elements2);
+    let f = await flyers.create('bluefence.png', elements2);
     await templates.create('glow.jpg', elements);
     await templates.create('purplelines.jpg', elements);
     await templates.create('yellow.jpg', elements);
