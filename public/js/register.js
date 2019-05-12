@@ -10,7 +10,7 @@ $(function(){
                 $("#checkUsername").attr({type:"text"}).val("Invalid email. Email already exists");
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
-                $("#checkUsername").attr({type:"textarea"}).val("This email is valid");
+                $("#checkUsername").attr({type:"textarea"}).val("");
             }
         });
     });
