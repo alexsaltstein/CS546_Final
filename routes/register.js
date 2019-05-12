@@ -14,15 +14,17 @@ router.post("/", async (req,res) =>{
     try {
         if (userInfo.firstName.length > 0 && userInfo.firstName.length <= 20 &&
             userInfo.lastName.length > 0 && userInfo.lastName.length <= 20 &&
-            userInfo.email.length > 0 && userInfo.email.length <= 40){
+            userInfo.email.length > 0 && userInfo.email.length <= 40 &&
+            userInfo.password.length > 8 && userInfo.password.length <= 20 &&
+            userInfo.password == userInfo.repassword){
                 await data.users.create(userInfo.firstName,userInfo.lastName, userInfo.email, hashedPassword);
                 res.redirect("/login");
             }else{
-                res.render("admin/register", {});
+                res.render("admin/register", {error:"Incorrect credentials to register"});
             }
     } catch (err) {
         // console.log(err);
-        res.render("admin/error",{error: err});
+        res.render("admin/register", {error:"Incorrect credentials to register"});
     }
 });
 router.post("/check", async (req,res) =>{
