@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // console.log( "ready!" );
     $(".edit-custom-generic").click(function () {
         $('#exampleModal').modal('show');
         $(".text-tobe-saved1").text($(".edit-custom-text1").text());
