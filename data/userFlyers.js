@@ -56,7 +56,6 @@ let updateElement = async function updateElement(id, elementid, text, color, fon
     newElements[elementid] = {
         text: text,
         color: color,
-        size: size,
         font: font
     };
 

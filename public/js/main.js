@@ -20,8 +20,6 @@ $(document).ready(function () {
             $(".btn-color").text("Error");
         }
         let font = $(this).css("font-family").split(",")[0];
-        font = font.trim();
-        if (font.charAt(0) == '"') font = font.substring(1,font.length-1);
         $(".btn-font").text(font);
     });
 
@@ -38,6 +36,7 @@ $(document).ready(function () {
             $(".edit-custom-text4").text($(".text-tobe-saved4").val());
             $(".edit-custom-generic").css('color', $(".btn-color").text());
             $(".edit-custom-generic").css('font-family', $(".btn-font").text());
+            
             $.ajax({
                 url: "/flyers",
                 type: 'POST',
@@ -47,23 +46,23 @@ $(document).ready(function () {
                     elements: [
                         {
                             text: $(".text-tobe-saved1").val(),
-                            color: $(".edit-custom-text1").css("color"),
-                            font: $(".edit-custom-text1").css("font-family")
+                            color: $(".edit-custom-generic").css("color"),
+                            font: $(".edit-custom-generic").css("font-family")
                         },
                         {
                             text: $(".text-tobe-saved2").val(),
-                            color: $(".edit-custom-text2").css("color"),
-                            font: $(".edit-custom-text2").css("font-family")
+                            color: $(".edit-custom-generic").css("color"),
+                            font: $(".edit-custom-generic").css("font-family")
                         },
                         {
                             text: $(".text-tobe-saved3").val(),
-                            color: $(".edit-custom-text3").css("color"),
-                            font: $(".edit-custom-text3").css("font-family")
+                            color: $(".edit-custom-generic").css("color"),
+                            font: $(".edit-custom-generic").css("font-family")
                         },
                         {
                             text: $(".text-tobe-saved4").val(),
-                            color: $(".edit-custom-text4").css("color"),
-                            font: $(".edit-custom-text4").css("font-family")
+                            color: $(".edit-custom-generic").css("color"),
+                            font: $(".edit-custom-generic").css("font-family")
                         }
                     ]
                 },
