@@ -41,12 +41,12 @@ let get = async function get(id){
     return flyer;
 }
 
-let updateElement = async function updateElement(id, elementid, text, color, font){
+let updateElement = async function updateElement(id, elementid, text, color, size){
     if (!id) throw "You must provide an id to search for";
     if (!isValidNum(elementid) || elementid < 0 || elementid > 3) throw "You must provide an element id to update";
     isValidString(text);
     isValidString(color);
-    isValidString(font);
+    isValidString(size);
     
     const flyersCollection = await flyers();
 
@@ -56,7 +56,7 @@ let updateElement = async function updateElement(id, elementid, text, color, fon
     newElements[elementid] = {
         text: text,
         color: color,
-        font: font
+        size: size
     };
 
     return flyersCollection

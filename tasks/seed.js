@@ -12,44 +12,44 @@ const main = async () => {
         {
             text: "Line1",
             color: "rgb(0, 0, 0)",
-            font: "Brush Script MT"
+            size: "20px"
         },
         {
             text: "Line2",
             color: "rgb(0, 0, 0)",
-            font: "Brush Script MT"
+            size: "20px"
         },
         {
             text: "Line3",
             color: "rgb(0, 0, 0)",
-            font: "Brush Script MT"
+            size: "20px"
         },
         {
             text: "Line4",
             color: "rgb(0, 0, 0)",
-            font: "Brush Script MT"
+            size: "20px"
         }
     ];
     const elements2 = [
         {
             text: "yellow",
             color: "rgb(0, 0, 0)",
-            font: "Brush Script MT, Times, serif"
+            size: "20px"
         },
         {
             text: "orange",
             color: "rgb(0, 0, 0)",
-            font: "Brush Script MT, Times, serif"
+            size: "20px"
         },
         {
             text: "hfdsa",
             color: "rgb(0, 0, 0)",
-            font: "Brush Script MT, Times, serif"
+            size: "20px"
         },
         {
             text: "hi",
             color: "rgb(0, 0, 0)",
-            font: "Brush Script MT, Times, serif"
+            size: "20px"
         }
     ];
     await templates.create('andrej-lisakov-679177-unsplash.jpg', elements);
