@@ -36,13 +36,16 @@ $(document).ready(function () {
             $(".edit-custom-text4").text($(".text-tobe-saved4").val());
             $(".edit-custom-generic").css('color', $(".btn-color").text());
             $(".edit-custom-generic").css('font-family', `${$(".btn-font").text()} , Times, serif`);
-            
+            console.log(`rgba(0, 0, 0, 0) url("http://localhost:3000/public/images/`.length);
+            console.log(`") no-repeat scroll 0% 0% / 100% padding-box border-box`.length);
+            console.log($(".card-main-div").css("background"));
+            console.log(($(".card-main-div").css("background")).substring(58, ($(".card-main-div").css("background")).length -55));
             $.ajax({
                 url: "/flyers",
                 type: 'POST',
                 data: {
                     id: $(".card-main-div").attr("id"),
-                    background: $(".card-main-div").attr("name"),
+                    background: `${($(".card-main-div").css("background")).substring(58, ($(".card-main-div").css("background")).length -55)}`,
                     elements: [
                         {
                             text: $(".text-tobe-saved1").val(),
