@@ -67,7 +67,7 @@ $(document).ready(function () {
                 },
                 dataType: 'json', // added data type
                 success: function (res) {
-                    window.location.reload();
+                    alert("Saved to your profile");
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     alert("Failed to save to your profile");
