@@ -15,8 +15,17 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
     try {
         let x = String(req.params.id);
-        const flyerCollectionid = await flyers.get(x);
+        let flyerCollectionid = null;
+        try{
+            flyerCollectionid = await userFlyers.get(x);
+        }catch(e){
+            console.log(e);
+        }
         //res.json(flyerCollectionid);
+        if (flyerCollectionid == null){
+            flyerCollectionid = await flyers.get(x);
+        }
+        
         res.status(200).render("EditFlyer/editFlyer", {
             id: flyerCollectionid._id,
             background: flyerCollectionid.background,
@@ -51,13 +60,14 @@ router.post("/", async (req,res) =>{
                 await users.addFlyer(String(req.session.userid),String(flyer._id));
                 let u = await users.get(String(req.session.userid));
                 req.session.flyers = u.flyers;
+                
             }
         }catch(e){
             //console.log(e);
         }
         //console.log(e);
     }
-    res.json({success:"success"});
+    res.json({id:flyer._id});
 });
 
 module.exports = router;

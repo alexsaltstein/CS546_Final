@@ -67,7 +67,7 @@ $(document).ready(function () {
                 },
                 dataType: 'json', // added data type
                 success: function (res) {
-                    alert("Saved to your profile");
+                    window.location.replace(`/flyers/${res.id}`);
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     alert("Failed to save to your profile");
