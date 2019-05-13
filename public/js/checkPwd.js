@@ -4,12 +4,20 @@ $(function(){
         if(!pattern.test(this.value))
            alert("Invalid email, register will fail");
     });
+    $('#password').blur(function() {
+        var pass = $('input[name=password]').val();
+        var repass = $('input[name=repassword]').val();
+        if(($('input[name=password]').val().length < 8)  || ($('input[name=password]').val().length > 20) ){
+            $('#checkpassword').attr({type:"text"}).val("Password must be between 8 and 20 characters long");
+        }
+       
+    });
     $('#repassword').blur(function() {
         var pass = $('input[name=password]').val();
         var repass = $('input[name=repassword]').val();
-        if(($('input[name=password]').val().length < 8) || ($('input[name=repassword]').val().length < 8)
-            || ($('input[name=password]').val().length > 20) || ($('input[name=repassword]').val().length > 20)){
-            $('#checkpassword').attr({type:"text"}).val("Password must be larger than 8 characters and less than 20");
+        if(($('input[name=password]').val().length < 8)
+            || ($('input[name=password]').val().length > 20)){
+            $('#checkpassword').attr({type:"text"}).val("Password must be between 8 and 20 characters long");
         }
         else if (pass != repass) {
             $('#checkpassword').attr({type:"text"}).val("Passwords must match");
@@ -18,4 +26,5 @@ $(function(){
             $('#checkpassword').attr({type:"text"}).val("Valid Pasword");
         }
     });
+   
 });
