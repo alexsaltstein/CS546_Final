@@ -27,7 +27,7 @@ $(function () {
         c = c.split(",");
         var font = $("span[class='edit-custom-generic edit-custom-text4']").css("font-size");
         doc.setFontSize(font.substring(0, 2));
-        doc.setTextColor(c[0], c[1], c[2]);
+        doc.setTextColor(Number(c[0]), Number(c[1]), Number(c[2]));
         doc.text(30, 50, text1);
         doc.text(30, 120, text2);
         doc.text(30, 190, text3);
