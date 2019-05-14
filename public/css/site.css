@@ -160,3 +160,12 @@ p{
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
+.form-control{
+    size: 35;
+}
+
+.label-l{
+    width: 400px;
+}
+
